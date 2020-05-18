@@ -4,37 +4,38 @@
 #
 Name     : R-pkgKitten
 Version  : 0.1.5
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/pkgKitten_0.1.5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pkgKitten_0.1.5.tar.gz
 Summary  : Create Simple Packages Which Do not Upset R Package Checks
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-whoami
-BuildRequires : R-whoami
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
-## pkgKitten [![Build Status](https://travis-ci.org/eddelbuettel/pkgkitten.svg)](https://travis-ci.org/eddelbuettel/pkgkitten) [![License](http://img.shields.io/badge/license-GPL%20%28%3E=%202%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html) [![CRAN](http://www.r-pkg.org/badges/version/pkgKitten)](https://cran.r-project.org/package=pkgKitten) [![Dependencies](https://tinyverse.netlify.com/badge/pkgKitten)](https://cran.r-project.org/package=pkgKitten) [![Downloads](http://cranlogs.r-pkg.org/badges/pkgKitten?color=brightgreen)](http://www.r-pkg.org/pkg/pkgKitten)
+packages which pass R package checks. This sets it apart from 
+ package.skeleton() which it calls, and which leaves imperfect files 
+ behind. As this is not exactly helpful for beginners, kitten() offers 
+ an alternative.
 
 %prep
 %setup -q -c -n pkgKitten
+cd %{_builddir}/pkgKitten
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571838097
+export SOURCE_DATE_EPOCH=1589770951
 
 %install
-export SOURCE_DATE_EPOCH=1571838097
+export SOURCE_DATE_EPOCH=1589770951
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
