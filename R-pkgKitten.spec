@@ -4,7 +4,7 @@
 #
 Name     : R-pkgKitten
 Version  : 0.2.1
-Release  : 22
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/pkgKitten_0.2.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/pkgKitten_0.2.1.tar.gz
 Summary  : Create Simple Packages Which Do not Upset R Package Checks
